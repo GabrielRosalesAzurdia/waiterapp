@@ -1,0 +1,3 @@
+mixin InjectModuleMixin {
+  void call();
+}
