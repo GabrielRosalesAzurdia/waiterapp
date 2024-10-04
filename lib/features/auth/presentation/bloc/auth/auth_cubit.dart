@@ -29,6 +29,10 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
+  Future<void> signOut() async {
+    emit(const AuthState.initial());
+  }
+
   User? get user =>
       switch (state) { AuthSuccess(user: final user) => user, _ => null };
 }

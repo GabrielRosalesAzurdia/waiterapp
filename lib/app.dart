@@ -5,6 +5,7 @@ import 'package:waiterapp/config/router.dart';
 import 'package:waiterapp/design/app_theme.dart';
 import 'package:waiterapp/features/auth/presentation/bloc/auth/auth_cubit.dart';
 import 'package:waiterapp/features/auth/presentation/bloc/login/login_form_cubit.dart';
+import 'package:waiterapp/features/waiter/presentation/bloc/waiter/waiter_cubit.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         BlocProvider.value(value: it<LoginFormCubit>()),
 
         // Waiter
+        BlocProvider.value(value: it<WaiterCubit>()),
       ],
       child: MaterialApp.router(
         title: 'Waiter App',

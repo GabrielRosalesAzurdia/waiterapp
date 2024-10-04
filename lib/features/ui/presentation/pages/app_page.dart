@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:waiterapp/features/auth/presentation/bloc/auth/auth_cubit.dart';
+import 'package:waiterapp/features/auth/presentation/router.dart';
 
 class AppPage extends StatelessWidget {
   final StatefulNavigationShell navigationShell;
@@ -20,8 +23,14 @@ class AppPage extends StatelessWidget {
           IconButton(
             color: Colors.white,
             icon: const Icon(Icons.logout),
-            //TODO implement logout
-            onPressed: () => {},
+            onPressed: () async {
+              final authCubit = context.read<AuthCubit>();
+              await authCubit.signOut();
+
+              if (context.mounted) {
+                context.pushReplacementNamed(AuthRoutes.login.name);
+              }
+            },
           ),
         ],
       ),

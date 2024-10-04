@@ -35,7 +35,10 @@ class LoadingScreen {
               child: const SizedBox(
                 width: 200,
                 height: 200,
-                child: CircularProgressIndicator(),
+                child: Padding(
+                  padding: EdgeInsets.all(50.0),
+                  child: CircularProgressIndicator(),
+                ),
               ),
             ),
           ),
