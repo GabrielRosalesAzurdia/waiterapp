@@ -1,5 +1,6 @@
 import 'package:fpdart/fpdart.dart';
 import 'package:waiterapp/config/api.dart';
+import 'package:waiterapp/config/api_data.dart';
 import 'package:waiterapp/features/auth/data/models/user_model/user_model.dart';
 import 'package:waiterapp/features/auth/domain/failures.dart';
 import 'package:waiterapp/features/auth/domain/params/login_params.dart';
@@ -18,7 +19,7 @@ class AuthRepositoryImpl extends AuthRepository {
         data: {
           "email_id": params.email,
           "password": params.password,
-          "API_KEY": "hgfyhfyi87hgc67",
+          "API_KEY": ApiData.apiKey,
           "token_fb": ""
         },
       );

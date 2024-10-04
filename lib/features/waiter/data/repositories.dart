@@ -1,5 +1,6 @@
 import 'package:fpdart/fpdart.dart';
 import 'package:waiterapp/config/api.dart';
+import 'package:waiterapp/config/api_data.dart';
 import 'package:waiterapp/features/waiter/data/models/waiter/waiter_model.dart';
 import 'package:waiterapp/features/waiter/domain/failures.dart';
 import 'package:waiterapp/features/waiter/domain/repositories.dart';
@@ -19,12 +20,12 @@ class WaiterRepositoryImpl extends WaiterRepository {
       final response = await client.dio.post(
         'Customer/Sellers',
         data: {
-          "API_KEY": "hgfyhfyi87hgc67",
+          "API_KEY": ApiData.apiKey,
           "userName": userName,
           "company_id": companyId,
           "pass": pass,
-          "tipo": "002",
-          "bodega": "B002"
+          "tipo": ApiData.tipo,
+          "bodega": ApiData.bodega,
         },
       );
 
