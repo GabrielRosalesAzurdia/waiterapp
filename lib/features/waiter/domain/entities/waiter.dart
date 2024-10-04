@@ -5,6 +5,7 @@ abstract class Waiter {
   final String companyNit;
   final String clave;
   final String url;
+  // ignore: non_constant_identifier_names
   final String DESICONO;
 
   Waiter({
@@ -14,6 +15,7 @@ abstract class Waiter {
     required this.companyNit,
     required this.clave,
     required this.url,
+    // ignore: non_constant_identifier_names
     required this.DESICONO,
   });
 }

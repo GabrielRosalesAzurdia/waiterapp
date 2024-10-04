@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:waiterapp/design/app_paddings.dart';
 import 'package:waiterapp/features/auth/presentation/bloc/auth/auth_cubit.dart';
 import 'package:waiterapp/features/waiter/presentation/bloc/waiter/waiter_cubit.dart';
-import 'package:waiterapp/features/waiter/presentation/widgets/WaiterCard.dart';
+import 'package:waiterapp/features/waiter/presentation/widgets/waiter_card.dart';
 
 class WaitersPage extends HookWidget {
   const WaitersPage({super.key});

@@ -13,6 +13,7 @@ class WaiterModel extends Waiter with _$WaiterModel {
     required String companyNit,
     required String clave,
     required String url,
+    // ignore: non_constant_identifier_names
     required String DESICONO,
   }) = _WaiterModel;
 

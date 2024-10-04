@@ -25,7 +25,8 @@ mixin _$WaiterModel {
   bool get notAvailable => throw _privateConstructorUsedError;
   String get companyNit => throw _privateConstructorUsedError;
   String get clave => throw _privateConstructorUsedError;
-  String get url => throw _privateConstructorUsedError;
+  String get url =>
+      throw _privateConstructorUsedError; // ignore: non_constant_identifier_names
   String get DESICONO => throw _privateConstructorUsedError;
 
   /// Serializes this WaiterModel to a JSON map.
@@ -209,6 +210,7 @@ class _$WaiterModelImpl implements _WaiterModel {
   final String clave;
   @override
   final String url;
+// ignore: non_constant_identifier_names
   @override
   final String DESICONO;
 
@@ -281,7 +283,7 @@ abstract class _WaiterModel implements WaiterModel {
   @override
   String get clave;
   @override
-  String get url;
+  String get url; // ignore: non_constant_identifier_names
   @override
   String get DESICONO;
 
