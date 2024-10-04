@@ -87,6 +87,7 @@ class LoginForm extends StatelessWidget {
         await authCubit.login(form.state);
 
         LoadingScreen.instance().hide();
+
         if (authCubit.state is AuthSuccess) {
           form.reset();
           if (context.mounted) context.goNamed(WaiterRoutes.list.name);
