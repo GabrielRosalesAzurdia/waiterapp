@@ -22,17 +22,51 @@ class LoginPage extends StatelessWidget {
     return SafeArea(
       bottom: false,
       child: Center(
-        child: Container(
-          constraints: const BoxConstraints(
-            maxWidth: AppSize.width,
-            maxHeight: AppSize.height,
-          ),
-          child: Column(
-            children: [
-              const SizedBox(height: 10),
-              _container(context),
-            ],
-          ),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            // Check if the screen width is larger than a certain threshold
+            final isWideScreen = constraints.maxWidth >
+                AppSize.width; // You can adjust this value
+
+            return Container(
+              constraints: const BoxConstraints(
+                maxWidth: AppSize.width,
+                maxHeight: AppSize.height,
+              ),
+              child: isWideScreen
+                  ? Row(
+                      children: [
+                        // Left side with text
+                        const Expanded(
+                          flex: 1,
+                          child: Padding(
+                            padding: EdgeInsets.all(20.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(height: 20),
+                                Image(
+                                    image:
+                                        AssetImage('assets/images/mesero.png')),
+                              ],
+                            ),
+                          ),
+                        ),
+                        // Right side with form
+                        Expanded(
+                          flex: 1,
+                          child: _container(context),
+                        ),
+                      ],
+                    )
+                  : Column(
+                      children: [
+                        const SizedBox(height: 10),
+                        _container(context),
+                      ],
+                    ),
+            );
+          },
         ),
       ),
     );
