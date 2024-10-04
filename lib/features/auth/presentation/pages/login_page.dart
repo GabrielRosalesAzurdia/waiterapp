@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:waiterapp/design/app_paddings.dart';
+import 'package:waiterapp/design/app_size.dart';
 import 'package:waiterapp/features/auth/presentation/widgets/login/login_form.dart';
 
 class LoginPage extends StatelessWidget {
@@ -20,11 +21,19 @@ class LoginPage extends StatelessWidget {
   Widget _content(BuildContext context) {
     return SafeArea(
       bottom: false,
-      child: Column(
-        children: [
-          const SizedBox(height: 10),
-          _container(context),
-        ],
+      child: Center(
+        child: Container(
+          constraints: const BoxConstraints(
+            maxWidth: AppSize.width,
+            maxHeight: AppSize.height,
+          ),
+          child: Column(
+            children: [
+              const SizedBox(height: 10),
+              _container(context),
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:waiterapp/design/app_size.dart';
 import 'package:waiterapp/features/auth/presentation/bloc/auth/auth_cubit.dart';
 import 'package:waiterapp/features/auth/presentation/router.dart';
 import 'package:waiterapp/features/waiter/presentation/bloc/waiter/waiter_cubit.dart';
@@ -37,7 +38,14 @@ class AppPage extends StatelessWidget {
           ),
         ],
       ),
-      body: navigationShell,
+      body: Center(
+        child: Container(
+            constraints: const BoxConstraints(
+              maxWidth: AppSize.width,
+              maxHeight: AppSize.height,
+            ),
+            child: navigationShell),
+      ),
     );
   }
 }
