@@ -36,6 +36,10 @@ class WaiterCubit extends Cubit<WaiterState> {
     }
   }
 
+  reset() {
+    emit(const WaiterState.initial());
+  }
+
   List<Waiter> get waiters => switch (state) {
         WaiterSuccess(:final waiters) => waiters,
         _ => [],

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:waiterapp/features/auth/presentation/bloc/auth/auth_cubit.dart';
 import 'package:waiterapp/features/auth/presentation/router.dart';
+import 'package:waiterapp/features/waiter/presentation/bloc/waiter/waiter_cubit.dart';
 
 class AppPage extends StatelessWidget {
   final StatefulNavigationShell navigationShell;
@@ -25,6 +26,8 @@ class AppPage extends StatelessWidget {
             icon: const Icon(Icons.logout),
             onPressed: () async {
               final authCubit = context.read<AuthCubit>();
+              final waiterCubit = context.read<WaiterCubit>();
+              waiterCubit.reset();
               await authCubit.signOut();
 
               if (context.mounted) {

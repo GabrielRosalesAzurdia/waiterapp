@@ -46,8 +46,6 @@ class LoginForm extends StatelessWidget {
             const LoginEmailInput(),
             const SizedBox(height: 15),
             const LoginPasswordInput(),
-            const SizedBox(height: 15),
-            const Text("Forgot password?"),
             const SizedBox(height: 30),
             _action(context),
             const SizedBox(height: 10),
