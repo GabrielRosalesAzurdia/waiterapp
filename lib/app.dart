@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
         BlocProvider.value(value: it<WaiterCubit>()),
       ],
       child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         title: 'Waiter App',
         theme: appTheme,
         routerConfig: appRouter,
