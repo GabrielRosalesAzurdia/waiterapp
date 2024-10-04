@@ -10,4 +10,5 @@ Open the project and run
 
 > flutter run
 
+
 And the app will start installing on your simulator / device
